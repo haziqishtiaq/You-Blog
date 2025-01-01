@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container styles */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* Style paragraphs */
+p {
+  margin-bottom: 20px;
+  color: var(--foreground);
+}
+
+/* Add some basic button styles */
+button {
+  @apply bg-blue-500 text-white border-none py-2 px-4 cursor-pointer rounded transition duration-300;
+}
+
+button:hover {
+  @apply bg-blue-600;
+}
+
+/* Add some basic link styles */
+a {
+  @apply text-blue-500 no-underline transition duration-300;
+}
+
+a:hover {
+  @apply text-blue-600;
+}
+
+/* Add some basic form input styles */
+input, textarea {
+  @apply w-full py-2 px-3 mb-4 border border-gray-300 rounded transition duration-300;
+}
+
+input:focus, textarea:focus {
+  @apply border-blue-500 outline-none;
+}
+
+/* Add styles for login and register buttons */
+.login-register-buttons {
+  @apply flex justify-center gap-4 mt-4;
+}
+
+.login-register-buttons a {
+  @apply inline-block py-2 px-4 bg-blue-500 text-white rounded transition duration-300;
+}
+
+.login-register-buttons a:hover {
+  @apply bg-blue-600;
+}
