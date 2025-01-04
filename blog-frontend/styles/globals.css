@@ -1,82 +1,106 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* globals.css */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset some basic elements */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Container styles */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Style headings */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 20px;
-  font-weight: 600;
-  color: var(--foreground);
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 0.5em;
+    transition: color 0.3s ease;
 }
 
-/* Style paragraphs */
 p {
-  margin-bottom: 20px;
-  color: var(--foreground);
+    margin-bottom: 1.5em;
 }
 
-/* Add some basic button styles */
-button {
-  @apply bg-blue-500 text-white border-none py-2 px-4 cursor-pointer rounded transition duration-300;
-}
-
-button:hover {
-  @apply bg-blue-600;
-}
-
-/* Add some basic link styles */
 a {
-  @apply text-blue-500 no-underline transition duration-300;
+    color: #0070f3;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-  @apply text-blue-600;
+    text-decoration: underline;
+    color: #005bb5;
 }
 
-/* Add some basic form input styles */
+/* Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* Forms */
 input, textarea {
-  @apply w-full py-2 px-3 mb-4 border border-gray-300 rounded transition duration-300;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus, textarea:focus {
-  @apply border-blue-500 outline-none;
+    border-color: #0070f3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
 }
 
-/* Add styles for login and register buttons */
-.login-register-buttons {
-  @apply flex justify-center gap-4 mt-4;
+/* Utility classes */
+.text-center {
+    text-align: center;
 }
 
-.login-register-buttons a {
-  @apply inline-block py-2 px-4 bg-blue-500 text-white rounded transition duration-300;
-}
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
 
-.login-register-buttons a:hover {
-  @apply bg-blue-600;
-}
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+
+.p-1 { padding: 1rem; }
+.p-2 { padding: 2rem; }
+.p-3 { padding: 3rem; }

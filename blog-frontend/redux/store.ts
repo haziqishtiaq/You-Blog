@@ -7,4 +7,11 @@ const store = configureStore({
   },
 });
 
+export const initializeStore = () => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    store.dispatch({ type: "auth/login", payload: { token } });
+  }
+};
+
 export default store;

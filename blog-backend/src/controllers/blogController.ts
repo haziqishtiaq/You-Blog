@@ -20,3 +20,12 @@ export const createBlog = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+export const getNewestBlogs = async (req: Request, res: Response) => {
+  try {
+    const blogs = await Blog.find().sort({ createdAt: -1 }).limit(5);
+    res.json(blogs);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+};
